@@ -2,25 +2,42 @@
 const themeToggle = document.querySelector('#checkbox');
 const body = document.querySelector('body');
 
-// Vérifie si un thème est sauvegardé dans le localStorage
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme) {
-    body.classList.add(currentTheme);
-    if (currentTheme === 'dark-theme') {
-        themeToggle.checked = true;
-    }
+/**
+ * Initialise et gère le thème de l'application
+ * Le thème par défaut est 'light-theme'
+ */
+function initializeTheme() {
+    // Récupère le thème sauvegardé ou utilise light-theme par défaut
+    const savedTheme = localStorage.getItem('theme') || 'light-theme';
+    
+    // Supprime les deux classes possibles pour éviter les conflits
+    body.classList.remove('light-theme', 'dark-theme');
+    
+    // Applique le thème sauvegardé
+    body.classList.add(savedTheme);
+    
+    // Synchronise l'état du checkbox
+    themeToggle.checked = savedTheme === 'dark-theme';
 }
 
+/**
+ * Gère le changement de thème
+ * @param {Event} event - L'événement de changement
+ */
+function handleThemeChange(event) {
+    const newTheme = event.target.checked ? 'dark-theme' : 'light-theme';
+    const oldTheme = newTheme === 'light-theme' ? 'dark-theme' : 'light-theme';
+    
+    body.classList.remove(oldTheme);
+    body.classList.add(newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+// Initialisation au chargement de la page
+document.addEventListener('DOMContentLoaded', initializeTheme);
+
 // Gestion du changement de thème
-themeToggle.addEventListener('change', function() {
-    if (this.checked) {
-        body.classList.replace('light-theme', 'dark-theme');
-        localStorage.setItem('theme', 'dark-theme');
-    } else {
-        body.classList.replace('dark-theme', 'light-theme');
-        localStorage.setItem('theme', 'light-theme');
-    }
-});
+themeToggle.addEventListener('change', handleThemeChange);
 
 // Animation de texte
 const texts = ['JavaScript', 'React', 'Node.js', 'Python', 'SQL', 'DevOps'];
@@ -103,4 +120,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Typing Animation
+const typingText = document.querySelector('.dynamic-text');
+const technologies = ['JavaScript', 'Python', 'Java', 'PHP', 'React', 'Node.js'];
+let techIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingDelay = 200;
+
+function type() {
+    const currentTech = technologies[techIndex];
+    
+    if (isDeleting) {
+        typingText.textContent = currentTech.substring(0, charIndex - 1);
+        charIndex--;
+        typingDelay = 100;
+    } else {
+        typingText.textContent = currentTech.substring(0, charIndex + 1);
+        charIndex++;
+        typingDelay = 200;
+    }
+
+    if (!isDeleting && charIndex === currentTech.length) {
+        isDeleting = true;
+        typingDelay = 1000; // Pause at end
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        techIndex = (techIndex + 1) % technologies.length;
+        typingDelay = 500; // Pause before starting new word
+    }
+
+    setTimeout(type, typingDelay);
+}
+
+// Start the typing animation when the page loads
+window.addEventListener('load', () => {
+    type();
 }); 
