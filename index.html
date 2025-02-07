@@ -158,37 +158,103 @@
       <div class="projects-grid">
         <div class="project-card" data-aos="flip-left">
           <div class="project-content">
-            <h3>E-commerce Platform</h3>
+            <div class="project-image project-slider">
+              <div class="slider-images">
+                <img src="img/diet-resume.jpg" alt="Diet App Resume" />
+                <img src="img/diet-recipe.jpg" alt="Diet App Recipe" />
+                <img src="img/diet-prepare-recipe.jpg" alt="Diet App Prepare Recipe" />
+              </div>
+              <div class="slider-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+              </div>
+            </div>
+            <h3>Diet App</h3>
             <p>
-              Application complète avec panier, paiement et gestion des
-              commandes
+              Application mobile intelligente pour le suivi nutritionnel et la génération de recettes personnalisées via l'IA.
             </p>
+            <div class="project-details">
+              <h4>Fonctionnalités principales :</h4>
+              <ul>
+                <li>Tracking des repas quotidiens</li>
+                <li>Génération de recettes par IA</li>
+                <li>Interface utilisateur intuitive</li>
+                <li>Analyse nutritionnelle détaillée</li>
+              </ul>
+            </div>
             <div class="tech-tags">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>MongoDB</span>
+              <span>React Native</span>
+              <span>NestJS</span>
+              <span>IA</span>
+              <span>TypeScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/youbi449" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
             </div>
           </div>
         </div>
+
         <div class="project-card" data-aos="flip-left" data-aos-delay="100">
           <div class="project-content">
-            <h3>Task Manager</h3>
-            <p>Application de gestion de tâches avec authentification</p>
+            <div class="project-image">
+              <img src="img/wow_finger.jpg" alt="WOW Finger Preview" />
+            </div>
+            <h3>WOW Finger</h3>
+            <p>
+              Outil innovant en Python pour World of Warcraft transformant le spam de touches en mode "hold to cast".
+            </p>
+            <div class="project-details">
+              <h4>Fonctionnalités principales :</h4>
+              <ul>
+                <li>Conversion du spam en maintien de touche</li>
+                <li>Configuration personnalisable</li>
+                <li>Amélioration du confort de jeu</li>
+              </ul>
+            </div>
             <div class="tech-tags">
-              <span>Vue.js</span>
-              <span>Express</span>
-              <span>PostgreSQL</span>
+              <span>Python</span>
+              <span>Automation</span>
+              <span>Gaming</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/youbi449" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
             </div>
           </div>
         </div>
+
         <div class="project-card" data-aos="flip-left" data-aos-delay="200">
           <div class="project-content">
-            <h3>Real-time Chat</h3>
-            <p>Application de chat en temps réel avec WebSocket</p>
+            <div class="project-image">
+              <img src="img/my-framework.png" alt="MyFramework Preview" />
+            </div>
+            <h3>MyFramework</h3>
+            <p>
+              Framework PHP personnel développé pour approfondir la compréhension des concepts fondamentaux des frameworks modernes.
+            </p>
+            <div class="project-details">
+              <h4>Caractéristiques :</h4>
+              <ul>
+                <li>Architecture MVC</li>
+                <li>Système de routage personnalisé</li>
+                <li>Gestion des dépendances</li>
+                <li>ORM intégré</li>
+              </ul>
+            </div>
             <div class="tech-tags">
-              <span>Socket.io</span>
-              <span>Express</span>
-              <span>MongoDB</span>
+              <span>PHP</span>
+              <span>MVC</span>
+              <span>ORM</span>
+              <span>Routing</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/youbi449" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
             </div>
           </div>
         </div>
@@ -208,22 +274,20 @@
           <div class="contact-details">
             <div class="contact-item">
               <i class="fas fa-envelope"></i>
-              <span>email@example.com</span>
+              <span>ayoub.belkacemi44@gmail.com</span>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span>+33 6 XX XX XX XX</span>
-            </div>
+
+
             <div class="contact-item">
               <i class="fas fa-map-marker-alt"></i>
               <span>Nantes, France</span>
             </div>
           </div>
           <div class="social-links">
-            <a href="#" class="social-link" id="github-link" aria-label="Github" target="_blank">
+            <a href="https://github.com/youbi449" alt="github" class="social-link" id="github-link" aria-label="Github" target="_blank">
               <i class="fab fa-github"></i>
             </a>
-            <a href="#" class="social-link" id="linkedin-link" aria-label="LinkedIn" target="_blank">
+            <a href="https://www.linkedin.com/in/ayoub-belkacemi/" alt="linkedin" class="social-link" id="linkedin-link" aria-label="LinkedIn" target="_blank">
               <i class="fab fa-linkedin"></i>
             </a>
           </div>
@@ -263,6 +327,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/theme-switcher.js"></script>
+    <script src="js/project-slider.js"></script>
     <script>
       AOS.init({
         duration: 1000,
