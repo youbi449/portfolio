@@ -12,15 +12,13 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body class="light-theme">
-    <!-- Theme Switcher -->
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round">
-          <i class="fas fa-sun"></i>
-          <i class="fas fa-moon"></i>
-        </div>
-      </label>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-dot active" data-section="home"></div>
+      <div class="scroll-dot" data-section="about"></div>
+      <div class="scroll-dot" data-section="skills"></div>
+      <div class="scroll-dot" data-section="projects"></div>
+      <div class="scroll-dot" data-section="contact"></div>
     </div>
 
     <!-- Navigation -->
@@ -36,6 +34,16 @@
           <li><a href="#projects">Projets</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <!-- Theme Switcher -->
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+              <i class="fas fa-sun"></i>
+              <i class="fas fa-moon"></i>
+            </div>
+          </label>
+        </div>
       </div>
     </nav>
 
@@ -67,27 +75,27 @@
       <div class="about-content">
         <div class="about-text">
           <p>
-            Passionné par le développement web et les nouvelles technologies, je
-            suis un développeur Full Stack créatif et orienté solutions. Mon
-            expertise couvre l'ensemble de la stack technique, du frontend au
-            backend, en passant par le DevOps.
+            Développeur Fullstack passionné avec une solide expérience chez Silkke depuis 2022, je me spécialise dans le développement d'applications web modernes et performantes. Mon expertise couvre l'ensemble de la stack technique, de la conception d'APIs robustes au développement d'interfaces utilisateur réactives.
+          </p>
+          <p>
+            Fort d'une formation en BTS Développeur Web et d'expériences enrichissantes, j'excelle particulièrement dans les technologies React/TypeScript et PHP. Ma passion pour le reverse engineering et l'automatisation m'a conduit à développer des projets QoL, notamment des outils d'optimisation pour World of Warcraft et des bots.
           </p>
         </div>
         <div class="tech-stack">
           <div class="tech-item" data-aos="zoom-in" data-aos-delay="100">
             <i class="fas fa-laptop-code"></i>
-            <h3>Frontend</h3>
-            <p>HTML5, CSS3, JavaScript, React</p>
+            <h3>Frontend Expert</h3>
+            <p>React.js/Native, TypeScript, Redux, Angular</p>
           </div>
           <div class="tech-item" data-aos="zoom-in" data-aos-delay="200">
             <i class="fas fa-server"></i>
-            <h3>Backend</h3>
-            <p>Node.js, Python, SQL, NoSQL</p>
+            <h3>Backend Maîtrisé</h3>
+            <p>PHP (Laravel/Symfony), Node.js, Python, MySQL</p>
           </div>
           <div class="tech-item" data-aos="zoom-in" data-aos-delay="300">
             <i class="fas fa-cloud"></i>
-            <h3>DevOps</h3>
-            <p>Docker, CI/CD, Cloud Services</p>
+            <h3>DevOps & Système</h3>
+            <p>AWS, Docker, TCP/UDP, Nginx, Automatisation</p>
           </div>
         </div>
       </div>
@@ -98,54 +106,172 @@
       <h2>Compétences</h2>
       <div class="skills-container">
         <div class="skill-category">
-          <h3>Frontend</h3>
-          <div class="skill-bars">
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>HTML/CSS</span>
-                <span>90%</span>
+          <div class="category-header">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fab fa-react"></i>
+                </div>
+                <span class="skill-name">React/React Native</span>
               </div>
-              <div class="progress-line"><span class="html"></span></div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 90%"></div>
+                <span class="skill-progress-value">90%</span>
+              </div>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>JavaScript</span>
-                <span>85%</span>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fab fa-js"></i>
+                </div>
+                <span class="skill-name">TypeScript</span>
               </div>
-              <div class="progress-line"><span class="js"></span></div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 85%"></div>
+                <span class="skill-progress-value">85%</span>
+              </div>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>React</span>
-                <span>80%</span>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <span class="skill-name">Redux/State Management</span>
               </div>
-              <div class="progress-line"><span class="react"></span></div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 85%"></div>
+                <span class="skill-progress-value">85%</span>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fab fa-angular"></i>
+                </div>
+                <span class="skill-name">Angular</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 80%"></div>
+                <span class="skill-progress-value">80%</span>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="skill-category">
-          <h3>Backend</h3>
-          <div class="skill-bars">
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>Node.js</span>
-                <span>85%</span>
+          <div class="category-header">
+            <i class="fas fa-server"></i>
+            <h3>Backend</h3>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fab fa-php"></i>
+                </div>
+                <span class="skill-name">PHP Laravel</span>
               </div>
-              <div class="progress-line"><span class="node"></span></div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 90%"></div>
+                <span class="skill-progress-value">90%</span>
+              </div>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>Python</span>
-                <span>80%</span>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fab fa-node-js"></i>
+                </div>
+                <span class="skill-name">Node.js/NestJS</span>
               </div>
-              <div class="progress-line"><span class="python"></span></div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 85%"></div>
+                <span class="skill-progress-value">85%</span>
+              </div>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info">
-                <span>SQL</span>
-                <span>75%</span>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fab fa-python"></i>
+                </div>
+                <span class="skill-name">Python</span>
               </div>
-              <div class="progress-line"><span class="sql"></span></div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 80%"></div>
+                <span class="skill-progress-value">80%</span>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fab fa-symfony"></i>
+                </div>
+                <span class="skill-name">Symfony</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 75%"></div>
+                <span class="skill-progress-value">75%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="category-header">
+            <i class="fas fa-cloud"></i>
+            <h3>DevOps & Système</h3>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fab fa-docker"></i>
+                </div>
+                <span class="skill-name">Docker</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 85%"></div>
+                <span class="skill-progress-value">85%</span>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fab fa-aws"></i>
+                </div>
+                <span class="skill-name">AWS/Cloud</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 80%"></div>
+                <span class="skill-progress-value">80%</span>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fas fa-server"></i>
+                </div>
+                <span class="skill-name">Nginx/Apache</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 80%"></div>
+                <span class="skill-progress-value">80%</span>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  <i class="fas fa-network-wired"></i>
+                </div>
+                <span class="skill-name">TCP/UDP Networking</span>
+              </div>
+              <div class="skill-progress-container">
+                <div class="skill-progress-bar" style="width: 75%"></div>
+                <span class="skill-progress-value">75%</span>
+              </div>
             </div>
           </div>
         </div>
@@ -346,6 +472,7 @@
     <script src="js/theme-switcher.js"></script>
     <script src="js/project-slider.js"></script>
     <script src="js/image-modal.js"></script>
+    <script src="js/scroll-indicator.js"></script>
     <script>
       AOS.init({
         duration: 1000,
