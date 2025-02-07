@@ -325,9 +325,27 @@
       <p>&copy; 2024 Portfolio Développeur Full Stack. Tous droits réservés.</p>
     </footer>
 
+    <!-- Image Modal -->
+    <div class="image-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+        <button class="modal-nav modal-prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="modal-nav modal-next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <img src="" alt="" class="modal-image" />
+      </div>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/theme-switcher.js"></script>
     <script src="js/project-slider.js"></script>
+    <script src="js/image-modal.js"></script>
     <script>
       AOS.init({
         duration: 1000,
