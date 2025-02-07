@@ -1,3 +1,8 @@
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* Variables pour les thèmes */
 :root {
     /* Light theme */
@@ -15,6 +20,12 @@
     --text-dark: #A9B1D6;
     --card-bg-dark: rgba(26, 27, 38, 0.7);
     --shadow-dark: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 20px rgba(255, 255, 255, 0.05);
+
+    /* Typography */
+    --font-hero: 'Inter', sans-serif;
+    --font-headings: 'Space Grotesk', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-accent: 'Inter', sans-serif;
 }
 
 /* Theme Styles */
@@ -46,24 +57,25 @@ body.dark-theme {
 }
 
 html {
-    scroll-padding-top: 80px; /* Ajout pour le défilement précis */
+    scroll-padding-top: 80px;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     background: var(--background);
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 /* Sections communes */
 section {
-    min-height: 100vh;
-    padding: 80px 20px; /* Ajout de padding pour compenser la navbar */
+    min-height: auto;
+    padding: 80px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 /* Theme Switcher */
@@ -323,7 +335,7 @@ input:checked + .slider:before {
 
 /* About Section */
 .about {
-    padding: 100px 20px;
+    padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -356,7 +368,7 @@ input:checked + .slider:before {
 
 /* Skills Section */
 .skills {
-    padding: 100px 20px;
+    padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -421,9 +433,10 @@ input:checked + .slider:before {
 .project-card {
     background: var(--card-bg);
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease;
+    height: auto;
 }
 
 .project-card:hover {
@@ -437,12 +450,14 @@ input:checked + .slider:before {
 }
 
 .project-content p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 .project-details {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .project-details h4 {
@@ -508,9 +523,9 @@ input:checked + .slider:before {
 
 .project-image {
     width: 100%;
-    height: auto;
-    min-height: 200px;
-    max-height: 400px;
+    height: 200px;
+    min-height: auto;
+    max-height: 200px;
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 1rem;
@@ -530,15 +545,10 @@ input:checked + .slider:before {
 
 /* Project Slider Styles */
 .project-slider {
-    position: relative;
     width: 100%;
-    height: auto;
-    min-height: 200px;
-    max-height: 400px;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    box-shadow: var(--shadow);
+    height: 200px;
+    min-height: auto;
+    max-height: 200px;
 }
 
 .slider-images {
@@ -815,4 +825,67 @@ footer {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary);
+}
+
+/* Typography Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+/* Hero Section Typography Override */
+.hero h1, 
+.hero h2,
+.hero p {
+    font-family: var(--font-hero);
+}
+
+/* Buttons and Interactive Elements */
+button,
+.button,
+.nav-link {
+    font-family: var(--font-accent);
+    font-weight: 500;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.75rem;
+    }
+    
+    h4 {
+        font-size: 1.25rem;
+    }
+    
+    body {
+        font-size: 15px;
+    }
 } 
