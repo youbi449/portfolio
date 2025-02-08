@@ -410,10 +410,15 @@ input:checked + .slider:before {
 .about {
     position: relative;
     overflow: hidden;
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .about {
+        max-height: 100vh;
+    }
 }
 
 .about h2 {
@@ -590,6 +595,7 @@ input:checked + .slider:before {
 @media (max-width: 768px) {
     .about {
         padding: 60px 1rem;
+        height: auto;
     }
 
     .about-container {
@@ -603,6 +609,8 @@ input:checked + .slider:before {
 
     .about-text-container {
         padding: 1.5rem;
+        max-height: none;
+        overflow-y: visible;
     }
 
     .tech-stack {
@@ -743,14 +751,14 @@ input:checked + .slider:before {
 /* Skills Section */
 .skills {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 2rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .skills h2 {
@@ -766,10 +774,8 @@ input:checked + .slider:before {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) transparent;
-    max-height: calc(100vh - 200px);
+    overflow: visible;
+    max-height: none;
 }
 
 .skills-grid {
@@ -907,24 +913,29 @@ input:checked + .slider:before {
 
 @media (max-width: 768px) {
     .skills {
-        height: 100vh;
-        padding: 1rem;
+        height: auto;
+        min-height: auto;
+        padding: 4rem 1rem;
+        overflow: visible;
     }
     
     .skills-container {
-        max-height: calc(100vh - 150px);
+        max-height: none;
         padding: 0.5rem 0;
+        overflow: visible;
     }
     
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
         padding: 0 0.5rem;
+        height: auto;
     }
     
     .skill-category {
         min-height: unset;
         padding: 1rem;
+        margin-bottom: 1rem;
     }
     
     .skill-hexagon {
@@ -1139,18 +1150,22 @@ input:checked + .slider:before {
     height: 200px;
     min-height: auto;
     max-height: 200px;
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 .slider-images {
     display: flex;
     width: 300%;
-    height: auto;
+    height: 100%;
     transition: transform 0.5s ease-in-out;
 }
 
 .slider-images img {
     width: 33.333%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -1557,30 +1572,24 @@ button,
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: none;
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
   font-size: 24px;
   cursor: pointer;
   padding: 20px;
-  transition: transform 0.3s ease;
-}
-
-.modal-prev {
-  left: -60px;
-}
-
-.modal-next {
-  right: -60px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
   transform: translateY(-50%) scale(1.1);
-}
-
-/* Dark theme support */
-.dark-theme .modal-overlay {
-  background-color: rgba(0, 0, 0, 0.9);
 }
 
 @media (max-width: 768px) {
@@ -1591,14 +1600,17 @@ button,
 
   .modal-nav {
     padding: 15px;
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .modal-prev {
-    left: 0;
+    left: 10px;
   }
 
   .modal-next {
-    right: 0;
+    right: 10px;
   }
 }
 
@@ -1776,16 +1788,21 @@ section > * {
 }
 
 @media (max-width: 768px) {
+    .logo-text {
+        display: none; /* Cache le logo AB sur mobile */
+    }
+
     .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block; /* Affiche le burger menu */
+        margin-right: auto; /* Aligne le burger menu à gauche */
     }
 
     .nav-content {
-        padding: 0.5rem 1rem;
+        justify-content: flex-end; /* Aligne les éléments à droite */
+        gap: 1rem; /* Espace entre les éléments */
     }
 
+    /* Styles du menu mobile */
     .nav-links {
         position: fixed;
         top: 60px;
@@ -1842,10 +1859,6 @@ section > * {
 
     .nav-links a:hover::after {
         width: 100%;
-    }
-
-    .theme-switch-wrapper {
-        margin-left: 1rem;
     }
 }
 
